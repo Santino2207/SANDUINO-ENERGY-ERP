@@ -60,6 +60,15 @@ flowchart LR
     G --> H[(SQLite)]
 ```
 
+## Documentación detallada
+
+| Documento | Contenido |
+|---|---|
+| [`docs/diagrama-de-flujo.md`](docs/diagrama-de-flujo.md) | Flujo general y procesos clave |
+| [`docs/casos-de-uso.md`](docs/casos-de-uso.md) | Actores, diagrama y 14 casos de uso especificados |
+| [`docs/pasos-de-uso.md`](docs/pasos-de-uso.md) | Instructivos paso a paso por rol, mensajes del sistema y reglas prácticas |
+| [`docs/cursograma.md`](docs/cursograma.md) | Cursogramas de venta, fiado, reposición, cierre y acceso |
+
 ## Seguridad y control
 
 - Contraseñas guardadas como **hash SHA-256**, nunca en texto plano.
@@ -143,6 +152,9 @@ sanduino-energy-erp/
 ├── .gitignore
 └── docs/
     ├── diagrama-de-flujo.md
+    ├── casos-de-uso.md
+    ├── pasos-de-uso.md
+    ├── cursograma.md
     └── SANDUINO_Energy_ERP_Manual_Completo.pdf
 ```
 
