@@ -43,6 +43,23 @@ SANDUINO Energy ocupa el espacio entre las planillas (gratis pero frágiles) y l
 | **Reportes** | Gráfico de ventas de los últimos siete días. |
 | **Usuarios, Auditoría y Backups** | Roles Admin y Vendedor, bloqueo de cuentas, bitácora de acciones y copias de seguridad. Solo visible para el Admin. |
 
+## Diagramas de flujo
+
+El flujo general del sistema y los procesos clave (inicio de sesión, venta, inventario, cierre de caja y bloqueo global) están en [`docs/diagrama-de-flujo.md`](docs/diagrama-de-flujo.md). GitHub los dibuja directamente.
+
+```mermaid
+flowchart LR
+    A([Inicio]) --> B{¿Sistema bloqueado?}
+    B -- Sí --> Z([Fin])
+    B -- No --> C[Login]
+    C --> D{¿Credenciales válidas?}
+    D -- No --> C
+    D -- Sí --> E[Backup automático]
+    E --> F[Ventana principal]
+    F --> G[Ventas · Inventario · Fiados · Caja · Proveedores · Reportes · Usuarios]
+    G --> H[(SQLite)]
+```
+
 ## Seguridad y control
 
 - Contraseñas guardadas como **hash SHA-256**, nunca en texto plano.
@@ -125,6 +142,7 @@ sanduino-energy-erp/
 ├── README.md
 ├── .gitignore
 └── docs/
+    ├── diagrama-de-flujo.md
     └── SANDUINO_Energy_ERP_Manual_Completo.pdf
 ```
 
