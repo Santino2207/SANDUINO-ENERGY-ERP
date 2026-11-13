@@ -1,0 +1,7 @@
+.DS_Store
+*.db
+backups/
+Ticket_SANDUINO_*.pdf
+__pycache__/
+venv/
+.env
